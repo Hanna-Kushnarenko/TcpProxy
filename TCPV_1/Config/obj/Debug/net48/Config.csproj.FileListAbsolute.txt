@@ -1,0 +1,9 @@
+C:\Users\Lenovo\OneDrive\Рабочий стол\diploma\TCPV_1\Config\obj\Debug\net48\Config.GlobalUsings.g.cs
+C:\Users\Lenovo\OneDrive\Рабочий стол\diploma\TCPV_1\Config\obj\Debug\net48\Config.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\OneDrive\Рабочий стол\diploma\TCPV_1\Config\obj\Debug\net48\Config.AssemblyInfoInputs.cache
+C:\Users\Lenovo\OneDrive\Рабочий стол\diploma\TCPV_1\Config\obj\Debug\net48\Config.AssemblyInfo.cs
+C:\Users\Lenovo\OneDrive\Рабочий стол\diploma\TCPV_1\Config\obj\Debug\net48\Config.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\OneDrive\Рабочий стол\diploma\TCPV_1\Config\bin\Debug\net48\Config.dll
+C:\Users\Lenovo\OneDrive\Рабочий стол\diploma\TCPV_1\Config\bin\Debug\net48\Config.pdb
+C:\Users\Lenovo\OneDrive\Рабочий стол\diploma\TCPV_1\Config\obj\Debug\net48\Config.dll
+C:\Users\Lenovo\OneDrive\Рабочий стол\diploma\TCPV_1\Config\obj\Debug\net48\Config.pdb

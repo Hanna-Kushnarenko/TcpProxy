@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+	TcpProxy Link Configuration file. 
+	
+	If TcpProxy service is started, saving this file will result in configuration reload.
+	All active connection still connected. 
+	
+	Uncomment sections you need, and fill sample parameters.
+	
+	If you need to listen on all interfaces for some port number, please specify 0.0.0.0 adress on EndPoint.
+-->
+
+<LinkConfig>
+	<SimpleLinks>
+		<!-- 
+		This is a SimpleLink sample section. This section need to be configured on a Proxy Machine.
+		
+		EndPoint - this is a IP/PortNumber configuration used to listen on proxy.
+		
+		Sources - this is a range of a client's source IP address allowed to connect to proxy port. 
+		You can add multiple SourcePoint sections.
+		
+		ServiceAddress - this is a Host/PortNumber configuration pointing to the destination service.
+		
+		You can add multiple SimpleLink sections.
+		-->
+
+		<!-- 
+		<SimpleLink>
+			<EndPoint>
+				<IP>0.0.0.0</IP>
+				<PortNumber>444</PortNumber>
+			</EndPoint>
+			<Sources>
+				<SourcePoint>
+					<IPFrom>127.0.0.1</IPFrom>
+					<IPTo>127.0.0.1</IPTo>
+				</SourcePoint>
+			</Sources>
+			<ServiceAddress>
+				<Address>my-service-machine-name</Address>
+				<PortNumber>555</PortNumber>
+			</ServiceAddress>
+		</SimpleLink>
+		-->
+
+	</SimpleLinks>
+
+	<!-- 
+		This is a ServerControlLink sample section. This section need to be configured on a Proxy Machine, to control 
+		Proxy and allow RemoteGateLinks from Server machine.
+	
+		EndPoint - this is a IP/PortNumber configuration to listen on proxy.
+		Sources - this is a range of a server's source IP adresses allowed to connect to control port. 
+		You can add multiple SourcePoint sections.
+		
+		Key used to encrypt control traffic. To disable encryption used blank value.
+	-->
+
+	<!--
+	<ServerControlLink>
+		<EndPoint>
+			<IP>0.0.0.0</IP>
+			<PortNumber>888</PortNumber>
+		</EndPoint>
+		<Sources>
+			<SourcePoint>
+				<IPFrom>127.0.0.1</IPFrom>
+				<IPTo>127.0.0.1</IPTo>
+			</SourcePoint>
+		</Sources>
+		<Key>123</Key>
+	</ServerControlLink>
+	-->
+
+	<RemoteGateLinks>
+
+		<!-- 
+		This is a RemoteGateLink sample section. This section need to be configured on a Server Machine.
+	
+		GateControlAddress - this is a control address of Proxy machine.
+		
+		GateEndPoint - this is a IP/PortNumber configuration to listen on proxy, clients of our service will 
+		connects to this endpoint.
+	
+		Key - used to encrypt control traffic, this need to be same with the ServerControlLink->Key value on Proxy machine. 
+		To disable encryption used blank value.
+	
+		ServiceAddress - this is a Host/PortNumber configuration pointing to the destination service.
+		
+		Sources - this is a range of a client's source IP address allowed to connect to proxy port (GateEndPoint). 
+		You can add multiple SourcePoint sections.
+
+		
+		You can add multiple RemoteGateLink sections.
+		-->
+
+		<!--
+		
+		<RemoteGateLink>
+			<GateControlAddress>
+				<Address>my-proxy-machine-name</Address>
+				<PortNumber>888</PortNumber>
+			</GateControlAddress>
+			<GateEndPoint>
+				<IP>0.0.0.0</IP>
+				<PortNumber>999</PortNumber>
+			</GateEndPoint>
+			<Key>123</Key>
+			<ServiceAddress>
+				<Address>my-another-service-machine-name</Address>
+				<PortNumber>1001</PortNumber>
+			</ServiceAddress>
+			<Sources>
+				<SourcePoint>
+					<IPFrom>127.0.0.1</IPFrom>
+					<IPTo>127.0.0.1</IPTo>
+				</SourcePoint>
+			</Sources>
+		</RemoteGateLink>
+		-->
+		<RemoteGateLink>
+			<GateControlAddress>
+				<Address>91.202.128.107</Address>
+				<PortNumber>64694</PortNumber>
+			</GateControlAddress>
+			<GateEndPoint>
+				<IP>0.0.0.0</IP>
+				<PortNumber>64343</PortNumber>
+			</GateEndPoint>
+			<Key>876543</Key>
+			<ServiceAddress>
+				<Address>192.168.31.72</Address>
+				<PortNumber>22</PortNumber>
+			</ServiceAddress>
+			<Sources>
+				<SourcePoint>
+					<IPFrom>1.0.0.1</IPFrom>
+					<IPTo>223.255.255.254</IPTo>
+				</SourcePoint>
+			</Sources>
+		</RemoteGateLink>	
+	
+	</RemoteGateLinks>
+
+	<!-- Logging level, allowed values is: (Debug, Info, Important, Warning, Error) -->
+	<LogLevel>Warning</LogLevel>
+
+	<!-- 
+		Listening timeout value in milliseconds. 
+		When PortNumber is busy by another program, TcpProxy will try to listen on PortNumber
+		after specified timeout
+	-->
+	<BindTimeout>60000</BindTimeout>
+
+  <!-- 
+		KeepAlive timeout value in milliseconds. 
+	-->
+  <KeepAliveTimeout>15000</KeepAliveTimeout>
+</LinkConfig>
